@@ -15,7 +15,7 @@ const resolvers = {
       const user = await User.findOne({
         email: args.email
       })
-      const checkPasword = await user.iscorrectpassword(args.password)
+      const checkPassword = await user.isCorrectPassword(args.password)
       if (!checkPassword) {
         throw new AuthenticationError("incorrect credentials")
       };
